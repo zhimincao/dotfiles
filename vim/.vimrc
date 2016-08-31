@@ -12,6 +12,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'rust-lang/rust.vim'
+Plugin 'vim-scripts/DoxygenToolkit.vim'
+Plugin 'nvie/vim-flake8'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -54,6 +56,7 @@ set softtabstop=4
 
 syntax on
 autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePost *.py call Flake8()
 
 colorscheme molokai
 set encoding=utf8
